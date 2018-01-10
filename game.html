@@ -29,32 +29,36 @@
 
   <div class="container">
 
-    <div class="row gameContainer">
-      <div class="col-md-3 col-sm-2">
-      </div>
+    <div class="row">
+      <div class="card col-6 offset-md-3">
 
-      <div class="gameCard col-sm-10 col-md-6 ">
-
-        <div id="universityName">
-          <p class="universityNameContainer">
-          </p>
+        <div class="card-body">
+          <div id="universityName">
+            <h5 class="card-title universityNameContainer">
+            </h5>
+          </div>
+          <p class="card-text">Weitere Beschreibung</p>
         </div>
 
         <div id="universityImg">
         </div>
 
-        <div id="universityData">
-          <p class="universityDataContainer">
-          </p>
+        <div class="row">
+          <div class="col-7">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Studenten</li>
+              <li class="list-group-item">Größe Campus</li>
+              <li class="list-group-item">Semesterbeitrag</li>
+              <li class="list-group-item">Studiengänge</li>
+              <li class="list-group-item">Funfact</li>
+            </ul>
+          </div>
+          <div class="col-5 universityDataContainer">
+          </div>
         </div>
-
-      </div>
-
-      <div class="col-md-3 col-sm-2">
       </div>
 
     </div>
-
   </div>
 
   <script>
@@ -78,7 +82,7 @@
       // create list item in HTML
       $.each(data, function(key, val) {
         if (key != "name") {
-          items.push("<li id='" + key + "'>" + val + "</li>");
+          items.push("<li class='list-group-item' id='" + key + "'>" + val + "</li>");
         } else {
           name = val;
         }
@@ -90,13 +94,12 @@
 
       // append list item to selected class
       $("<ul/>", {
-        "class": "universityDataList",
+        "class": "universityDataList list-group list-group-flush",
         html: items.join("")
       }).appendTo(".universityDataContainer");
 
       // append picture of university to selected id
-      $('#universityImg').prepend('<img id="universityImg" class="img-thumbnail" src="./assets/media/img/universities/' + universityName + '.jpg" />')
-      console.log(universityImg);
+      $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.jpg" />')
 
     });
   </script>
