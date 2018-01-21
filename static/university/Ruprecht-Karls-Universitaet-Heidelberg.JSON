@@ -1,7 +1,8 @@
 {
-  "name": "Ruprecht-Karls-UniversitÃ¤t Heidelberg",
+  "name": "Ruprecht-Karls-Universität Heidelberg",
   "amountStudents": "30.787",
-  "sizeCampus": "50000 mÂ²",
-  "semesterFee": "152,30,- â‚¬",
-  "amountCourses": "192"
+  "sizeCampus": "50000 m²",
+  "semesterFee": "152,30 €",
+  "amountCourses": "192",
+  "funFact": "xyz"
 }

@@ -1,7 +1,8 @@
 {
-  "name": "Georg-August-UniversitÃ¤t GÃ¶ttingen",
-  "amountStudents": "7000",
-  "sizeCampus": "29384 mÂ²",
-  "semesterFee": "350,- â‚¬",
-  "amountCourses": "34"
+  "name": "Georg-August-Universität Göttingen",
+  "amountStudents": "30.600",
+  "sizeCampus": "753.860 m²",
+  "semesterFee": "337,01 €",
+  "amountCourses": "206",
+  "funFact": "xyz"
 }

@@ -1,7 +1,8 @@
 {
-  "name": "UniversitÃ¤t Hildesheim",
+  "name": "Universität Hildesheim",
   "amountStudents": "20.386",
-  "sizeCampus": "475.000 mÂ²",
-  "semesterFee": "112,05 â‚¬",
-  "amountCourses": "54"
-}
+  "sizeCampus": "475.000 m²",
+  "semesterFee": "112,05 €",
+  "amountCourses": "54",
+  "funFact": "xyz"
+} 

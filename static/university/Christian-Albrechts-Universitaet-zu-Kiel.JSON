@@ -1,7 +1,8 @@
 {
-  "name": "Christian-Albrechts-UniversitÃ¤t zu Kiel",
-  "amountStudents": "7000",
-  "sizeCampus": "29384 mÂ²",
-  "semesterFee": "350,- â‚¬",
-  "amountCourses": "34"
+  "name": "Christian-Albrechts-Universität zu Kiel",
+  "amountStudents": "25.277",
+  "sizeCampus": "242.380 m²",
+  "semesterFee": "120,50 €",
+  "amountCourses": "196",
+  "funFact": "xyz"
 }

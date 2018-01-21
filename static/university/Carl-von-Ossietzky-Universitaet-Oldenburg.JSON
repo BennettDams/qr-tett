@@ -1,7 +1,8 @@
 {
-  "name": "Carl-von-Ossietzky-UniversitÃ¤t Oldenburg",
-  "amountStudents": "7000",
-  "sizeCampus": "29384 mÂ²",
-  "semesterFee": "350,- â‚¬",
-  "amountCourses": "34"
+  "name": "Carl-von-Ossietzky-Universität Oldenburg",
+  "amountStudents": "15.220",
+  "sizeCampus": "120.150 m²",
+  "semesterFee": "350,10 €",
+  "amountCourses": "154",
+  "funFact": "xyz"
 }
