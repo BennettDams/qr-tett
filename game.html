@@ -30,84 +30,84 @@
       <div class="card col-6 offset-md-3">
 
         <div class="card-block">
-  <h4 class="card-title"></h4>
-  <h4 class="card-title"></h4>
-</div>
+          <h4 class="card-title"></h4>
+          <h4 class="card-title"></h4>
+        </div>
 
         <div class="card-body text-center">
           <div id="universityName">
 
             <div class="card-block">
-      <h4 class="card-title"></h4>
-    </div>
+              <h4 class="card-title"></h4>
+            </div>
 
-        <div id="universityImg">
-        </div>
+            <div id="universityImg">
+            </div>
 
-        <div class="card-block">
-  <h4 class="card-title"></h4>
-</div>
+            <div class="card-block">
+              <h4 class="card-title"></h4>
+            </div>
 
-        <div class="row">
-          <div class="col-7">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Studenten</li>
-              <li class="list-group-item">Größe Campus</li>
-              <li class="list-group-item">Semesterbeitrag</li>
-              <li class="list-group-item">Studiengänge</li>
-              <!--                <li class="list-group-item">Funfact</li>               -->
-            </ul>
+            <div class="row">
+              <div class="col-7">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Studenten</li>
+                  <li class="list-group-item">Größe Campus</li>
+                  <li class="list-group-item">Semesterbeitrag</li>
+                  <li class="list-group-item">Studiengänge</li>
+                  <!--                <li class="list-group-item">Funfact</li>               -->
+                </ul>
+              </div>
+              <div class="col-5 universityDataContainer">
+              </div>
+            </div>
           </div>
-          <div class="col-5 universityDataContainer">
-          </div>
+
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <script>
-    // variable university name from URL param
-    $.urlParam = function(name) {
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-      return results[1] || 0;
-    }
-
-    // set variable to name
-    var universityName = $.urlParam('university');
-
-    // JSON mit Variable holen
-    $.ajax({
-      url: "static/university/" + universityName + ".JSON"
-    }).done(function(data) {
-
-      var items = [];
-      var name;
-
-      // create list item in HTML
-      $.each(data, function(key, val) {
-        if (key != "name") {
-          items.push("<li class='list-group-item' id='" + key + "'>" + val + "</li>");
-        } else {
-          name = val;
+      <script>
+        // variable university name from URL param
+        $.urlParam = function(name) {
+          var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+          return results[1] || 0;
         }
-      });
 
-      // set universityName
-      $('#universityName').prepend('<h1>' + name + '</h1>');
-      console.log(name);
+        // set variable to name
+        var universityName = $.urlParam('university');
 
-      // append list item to selected class
-      $("<ul/>", {
-        "class": "universityDataList list-group list-group-flush",
-        html: items.join("")
-      }).appendTo(".universityDataContainer");
+        // JSON mit Variable holen
+        $.ajax({
+          url: "static/university/" + universityName + ".JSON"
+        }).done(function(data) {
 
-      // append picture of university to selected id
-      $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.jpg" />')
+          var items = [];
+          var name;
 
-    });
-  </script>
+          // create list item in HTML
+          $.each(data, function(key, val) {
+            if (key != "name") {
+              items.push("<li class='list-group-item' id='" + key + "'>" + val + "</li>");
+            } else {
+              name = val;
+            }
+          });
+
+          // set universityName
+          $('#universityName').prepend('<h1>' + name + '</h1>');
+          console.log(name);
+
+          // append list item to selected class
+          $("<ul/>", {
+            "class": "universityDataList list-group list-group-flush",
+            html: items.join("")
+          }).appendTo(".universityDataContainer");
+
+          // append picture of university to selected id
+          $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.jpg" />')
+
+        });
+      </script>
 
 </body>
 
