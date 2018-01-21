@@ -1,8 +1,7 @@
 {
-  "name": "Universität Stuttgart",
+  "name": "UniversitÃ¤t Stuttgart",
   "amountStudents": "27.686",
-  "sizeCampus": "930.548 m²",
-  "semesterFee": "175,60,- €",
-  "amountCourses": "182",
-  "funFact": "xyz"
+  "sizeCampus": "930.548 mÂ²",
+  "semesterFee": "175,60,- â‚¬",
+  "amountCourses": "182"
 }
