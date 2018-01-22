@@ -1,7 +1,8 @@
 {
-  "name": "TU MÃ¼nchen",
+  "name": "TU München",
   "amountStudents": "39.081",
-  "sizeCampus": "29384 mÂ²",
-  "semesterFee": "129,40 â‚¬",
-  "amountCourses": "177"
+  "sizeCampus": "69.380 m²",
+  "semesterFee": "129,40 €",
+  "amountCourses": "177",
+  "funFact": "xyz"
 }

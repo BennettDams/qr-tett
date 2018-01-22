@@ -1,7 +1,8 @@
 {
-  "name": "UniversitÃ¤t Hamburg",
+  "name": "Universität Hamburg",
   "amountStudents": "42.106",
-  "sizeCampus": "287.000 mÂ²",
-  "semesterFee": "313,- â‚¬",
-  "amountCourses": "172"
+  "sizeCampus": "287.000 m²",
+  "semesterFee": "313,- €",
+  "amountCourses": "172",
+  "funFact": "xyz"
 }
