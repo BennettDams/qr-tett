@@ -86,7 +86,7 @@
           // create list item in HTML
           $.each(data, function(key, val) {
             if (key != "name") {
-              items.push("<li class='list-group-item' id='" + key + "'>" + val + "</li>");
+              items.push("<li class='list-group-item' id='" + key.replace("ä","&auml") + "'>" + val + "</li>");
             } else {
               name = val;
             }
