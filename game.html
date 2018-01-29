@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>QR-TETT</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/lux/bootstrap.min.css" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link href="assets/css/style.css" rel="stylesheet">
 
   <script>
@@ -21,12 +23,13 @@
 
   <div id="navbar"></div>
 
-  <div id="header"></div>
+  <!--    <div id="header"></div>   -->
 
-  <div class="container">
+
+  <div class="container-fluid">
 
     <div class="row">
-      <div class="card col-6 offset-md-3">
+      <div class="card">
 
         <div class="card-block">
           <h4 class="card-title"></h4>
@@ -47,66 +50,154 @@
               <h4 class="card-title"></h4>
             </div>
 
-            <div class="row">
-              <div class="col-7">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Studenten</li>
-                  <li class="list-group-item">Größe Campus</li>
-                  <li class="list-group-item">Semesterbeitrag</li>
-                  <li class="list-group-item">Studiengänge</li>
-                  <!--                <li class="list-group-item">Funfact</li>               -->
-                </ul>
+          </div>
+        </div>
+
+
+
+
+        <div class="row">
+          <div id="accordion" class="col-12">
+
+
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Studenten
+            </button>
+          </h5>
               </div>
-              <div class="col-5 universityDataContainer">
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  A
+                </div>
               </div>
             </div>
-          </div>
 
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Größe Campus
+            </button>
+          </h5>
+              </div>
+              <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                  A
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+              Semesterbeitrag
+            </button>
+          </h5>
+              </div>
+              <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                  A
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+              Studiengänge
+            </button>
+          </h5>
+              </div>
+              <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                  A
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
         </div>
       </div>
+    </div>
 
-      <script>
-        // variable university name from URL param
-        $.urlParam = function(name) {
-          var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-          return results[1] || 0;
+  </div>
+
+
+
+  <script>
+    // convert number to English word
+    var a = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+    var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+    function inWords(num) {
+      if ((num = num.toString()).length > 9) return 'overflow';
+      n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+      if (!n) return;
+      var str = '';
+      str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+      str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+      str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+      str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+      str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + a[n[5][1]]) : '';
+      return str;
+    }
+
+
+    // variable university name from URL param
+    $.urlParam = function(name) {
+      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+      return results[1] || 0;
+    }
+
+    // set variable to name
+    var universityName = $.urlParam('university');
+
+    // JSON mit Variable holen
+    $.ajax({
+      url: "static/university/" + universityName + ".JSON"
+    }).done(function(data) {
+
+      var items = [];
+      var name;
+
+      // create list item in HTML
+      $.each(data, function(key, val) {
+        if (key != "name") {
+          items.push("<li class='list-group-item' id='" + key.replace("ä", "&auml") + "'>" + val + "</li>");
+        } else {
+          name = val;
         }
+      });
 
-        // set variable to name
-        var universityName = $.urlParam('university');
+      // set universityName
+      $('#universityName').prepend('<h1>' + name + '</h1>');
+      console.log(name);
 
-        // JSON mit Variable holen
-        $.ajax({
-          url: "static/university/" + universityName + ".JSON"
-        }).done(function(data) {
+      // append list item to selected class
+      $("<ul/>", {
+        "class": "universityDataList list-group list-group-flush",
+        html: items.join("")
+      }).appendTo(".universityDataContainer");
 
-          var items = [];
-          var name;
+      // append picture of university to selected id
+      $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.gif" />')
 
-          // create list item in HTML
-          $.each(data, function(key, val) {
-            if (key != "name") {
-              items.push("<li class='list-group-item' id='" + key.replace("ä","&auml") + "'>" + val + "</li>");
-            } else {
-              name = val;
-            }
-          });
+    });
 
-          // set universityName
-          $('#universityName').prepend('<h1>' + name + '</h1>');
-          console.log(name);
+    var x = 5;
 
-          // append list item to selected class
-          $("<ul/>", {
-            "class": "universityDataList list-group list-group-flush",
-            html: items.join("")
-          }).appendTo(".universityDataContainer");
+    console.log(inWords(x));
+  </script>
 
-          // append picture of university to selected id
-          $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.jpg" />')
 
-        });
-      </script>
 
 </body>
 
