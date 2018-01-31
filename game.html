@@ -175,11 +175,18 @@
 
       // create list item in HTML
       $.each(data, function(key, val) {
-        if (key != "name") {
-          items.push("<h1 class='cardItem display-4' id='" + key.replace("ä", "&auml") + "'>" + val + "</h1>");
-        } else {
-          name = val;
+
+        switch (key) {
+          case "name":
+            name = val;
+            break;
+          case "funFact":
+            items.push("<h1 class='cardItem display-5' id='" + key.replace("ä", "&auml") + "'>" + val + "</h1>");
+            break;
+          default:
+            items.push("<h1 class='cardItem display-4' id='" + key.replace("ä", "&auml") + "'>" + val + "</h1>");
         }
+
       });
 
       // set universityName
