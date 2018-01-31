@@ -67,8 +67,7 @@
           </h5>
               </div>
               <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-                <div class="card-body gameData1">
-                  A
+                <div class="card-body" id="gameData1">
                 </div>
               </div>
             </div>
@@ -82,8 +81,7 @@
           </h5>
               </div>
               <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-                <div class="card-body gameData2">
-                  A
+                <div class="card-body" id="gameData2">
                 </div>
               </div>
             </div>
@@ -97,8 +95,7 @@
           </h5>
               </div>
               <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-                <div class="card-body gameData3">
-                  A
+                <div class="card-body" id="gameData3">
                 </div>
               </div>
             </div>
@@ -112,8 +109,7 @@
           </h5>
               </div>
               <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
-                <div class="card-body gameData4">
-                  A
+                <div class="card-body" id="gameData4">
                 </div>
               </div>
             </div>
@@ -127,8 +123,7 @@
           </h5>
               </div>
               <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-                <div class="card-body gameData5">
-                  A
+                <div class="card-body" id="gameData5">
                 </div>
               </div>
             </div>
@@ -142,8 +137,7 @@
           </h5>
               </div>
               <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
-                <div class="card-body gameData6">
-                  A
+                <div class="card-body" id="gameData6">
                 </div>
               </div>
             </div>
@@ -181,7 +175,7 @@
       // create list item in HTML
       $.each(data, function(key, val) {
         if (key != "name") {
-          items.push("<li class='list-group-item' id='" + key.replace("ä", "&auml") + "'>" + val + "</li>");
+          items.push("<p class='cardItem' id='" + key.replace("ä", "&auml") + "'>" + val + "</p>");
         } else {
           name = val;
         }
@@ -191,10 +185,15 @@
       $('#universityName').prepend('<h1>' + name + '</h1>');
 
       // append list item to selected class
-      $("<ul/>", {
-        "class": "universityDataList list-group list-group-flush",
-        html: items.join("")
-      }).appendTo(".universityDataContainer");
+      // $("<ul/>", {
+      //   "class": "universityDataList list-group list-group-flush",
+      //   html: items.join("")
+      // }).appendTo(".universityDataContainer");
+
+      for (var i = 0; i < items.length; i++) {
+        $('#gameData' + (i+1)).prepend('<h3>' + items[i] + '</h3>');
+      }
+
 
       // append picture of university to selected id
       $('#universityImg').prepend('<img id="universityImg" class="card-img-top" src="./assets/media/img/universities/' + universityName + '.gif" />')
